@@ -70,6 +70,11 @@
         autoplay: false
       })
 
+      //add layer 1 audio - search for 'layer1' to see where this gets started
+      //const layer1 = new BABYLON.Sound("Layer1", "soundfile.wav", scene, null, {
+      //  loop: true
+      //})
+
       engine.displayLoadingUI();
 
       var light = new BABYLON.DirectionalLight(
@@ -77,6 +82,7 @@
         new BABYLON.Vector3(0, -1, -0.3),
         scene
       );
+      
       let camera;
       var importedMeshes;
       BABYLON.SceneLoader.ImportMesh("", "/", "scene.gltf", scene, function (newMeshes) {
@@ -119,8 +125,9 @@
         camera.upperRadiusLimit = 2;
         setTimeout(function () {
           engine.hideLoadingUI();
+          //uncomment to start audio when scene loads
+          //layer1.play()
         }, 2000);
-        //addPositionalControls(newMeshes);
       }
       );
 
