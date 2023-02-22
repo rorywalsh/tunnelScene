@@ -147,6 +147,7 @@
 
       scene.onKeyboardObservable.add((kbInfo) => {
             if (kbInfo.type === BABYLON.KeyboardEventTypes.KEYDOWN) {
+              BABYLON.Engine.audioEngine.audioContext?.resume();
                 if (kbInfo.event.key === 'ArrowUp' || kbInfo.event.keyCode == 87) {
                   if(!rolling.isPlaying){
                     rolling.play();
